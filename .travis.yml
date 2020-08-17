@@ -24,7 +24,7 @@ jobs:
         - mkdir -p book/build
         - julia --project=book -e 'using Pkg; pkg"dev ."; pkg"instantiate"'
         - julia --project=book -e 'ARGS=["build", "images", "html"]; cd("book"); include("make.jl")'
-        - julia --project=book deploy.jl
+        - julia src/asciidoc/deploy.jl
       addons:
         apt_packages:
           - asciidoctor
